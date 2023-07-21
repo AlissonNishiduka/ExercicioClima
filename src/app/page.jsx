@@ -6,19 +6,29 @@ import { useEffect, useState } from "react";
 
 const Page = () => {
   const [clima, setClima] = useState();
+
+ 
   useEffect(() => {
     fetch(
-      "https://api.hgbrasil.com/weather?format=json-cors&key=ab31f1a1&lat=-23.682&lon=-46.875&user_ip=remote"
+      "https://api.hgbrasil.com/weather?format=json-cors&key=ab31f1a1&city_name=Itapetininga,Sp"
     )
       .then((res) => res.json())
       .then((dados) => setClima(dados?.results));
   }, []);
 
   return (
-    <div className="w-screen h-screen items-center justify-center flex flex-col">
-      <Card >
-        <SearchBar className="" />
-        <InfoCard data={clima?.condition_slug} />
+    <div className="w-screen h-screen items-center text-center justify-center flex flex-col bg-gray-200">
+      <Card className=" ">
+        <div className="flex place-content-between">
+          <p className="mr-5">Insira sua localização</p>
+          <SearchBar className="" />
+        </div>
+
+        <div className="flex place-content-around">
+          <InfoCard data={clima?.temp} />
+          <InfoCard data={clima?.description} />
+        </div>
+        <InfoCard data={clima?.city} />
       </Card>
     </div>
   );

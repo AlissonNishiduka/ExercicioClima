@@ -1,8 +1,8 @@
 
 const SearchBar = () => {
     return (
-      <div className="mb-12">
-        <input type="text" className="border border-black" />
+      <div className=" rounded-md outline outline-1 shadow-black">
+        <input type="text" className="" />
       </div>
     );
  }

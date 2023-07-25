@@ -49,7 +49,7 @@ const Page = () => {
 
         <div className="flex flex-col place-content-between">
           <div className="flex place-content-around">
-            <InfoCard data={`${clima?.temp}ºC `} />
+            <InfoCard className="" data={`${clima?.temp}ºC `} />
             <IconsWeather icon={clima?.condition_code } />
           </div>
           <InfoCard data={clima?.description} />

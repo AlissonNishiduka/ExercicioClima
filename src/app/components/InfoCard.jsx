@@ -1,7 +1,7 @@
 
-export const InfoCard = ({ data }) => {
+export const InfoCard = ({ data,className }) => {
   return (
-    <div className=" text-2xl font-mono space-y-3">
+    <div className={className}>
       <p>{data}</p>
     </div>
   );
